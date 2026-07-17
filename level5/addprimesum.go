@@ -19,7 +19,7 @@ $ go run .
 $ go run . 5 7
 0
 */
-package main
+package pool
 
 import (
 	"os"

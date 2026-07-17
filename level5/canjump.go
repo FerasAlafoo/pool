@@ -59,13 +59,13 @@ true
 false
 true
 */
-package main
+package pool
 
 import (
 	"github.com/01-edu/z01"
 )
 
-func CanJump([]uint) bool {
+func CanJump(input []uint) bool {
 	z01.PrintRune('a')
-	return true
+	return false
 }

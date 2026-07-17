@@ -26,7 +26,7 @@ $
 // if its not in the final yet, add it
 // go to next char, see if its in the final, if not, add it, otherwise continue.
 
-package pool
+package main
 
 import (
 	"os"

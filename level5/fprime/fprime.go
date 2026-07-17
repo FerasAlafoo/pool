@@ -1,4 +1,4 @@
-package pool
+package main
 
 import (
 	"os"
@@ -7,7 +7,7 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func Fprime() {
+func main() {
 	if len(os.Args) != 2 {
 		return
 	}

@@ -11,7 +11,7 @@ padinto
 $ go run . ddf6vewg64f  twthgdwthdwfteewhrtag6h4ffdhsd
 df6ewg4
 */
-package pool
+package main
 
 import (
 	"fmt"
@@ -25,24 +25,27 @@ func main() {
 	args := os.Args[1:]
 	arg1 := []rune(args[0])
 	arg2 := []rune(args[1])
-	output := ""
+	output := " "
 
-	for i := 0 ; i < len(arg1) ; i++ {
+	for i := 0; i < len(arg1); i++ {
 		l1 := arg1[i]
-		for j := 0 ; j < len(arg2) ; j++ {
+		for j := 0; j < len(arg2); j++ {
 			l2 := arg2[j]
-			add := false
-			for k := 0 ; k < len(output) ; k++ {
-				if l1 == l2 && (len(output) != 1 || l1 != rune(output[k])) {
-					add = true
-				} else {
-					add = false
+			if l1 == l2 {
+				add := false
+				for k := 0; k < len(output); k++ {
+					if l1 != rune(output[k]) {
+						add = true
+					} else {
+						add = false
+						break
+					}
 				}
-			}
-			if add {
-				output += string(l2)
+				if add {
+					output += string(l2)
+				}
 			}
 		}
 	}
-	fmt.Print(output)
+	fmt.Println(output[1:])
 }

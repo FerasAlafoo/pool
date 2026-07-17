@@ -21,6 +21,10 @@ $
 $ go run . rien | cat -e
 $
 */
+// take 2 strings, put together to become one string
+// take first char in the string,
+// if its not in the final yet, add it
+// go to next char, see if its in the final, if not, add it, otherwise continue.
 
 package main
 
@@ -31,9 +35,35 @@ import (
 )
 
 func main() {
-	args := os.Args
-	if len(args) != 3 {
+	if len(os.Args) != 3 {
 		return
 	}
-	z01.PrintRune('a')
+	args := os.Args[1:]
+
+	starter := []rune(args[0] + args[1])
+	final := []rune{}
+	for i := 0; i < len(starter); i++ {
+		if len(final) == 0 {
+			final = append(final, rune(starter[0]))
+		}
+		add := false
+		index := 0
+		for j := 0; j < len(final); j++ {
+			if starter[i] == final[j] {
+				add = false
+				break
+			} else {
+				add = true
+				index = i
+			}
+		}
+		if add {
+			final = append(final, rune(starter[index]))
+		}
+	}
+
+	for _, r := range final {
+		z01.PrintRune(r)
+	}
+	z01.PrintRune('\n')
 }

@@ -26,7 +26,7 @@ func main() {
 				toPrint := i
 				x := ""
 				for toPrint > 0 {
-					x = string(rune(toPrint%10 + '0')) + x
+					x = string(rune(toPrint%10+'0')) + x
 					toPrint /= 10
 				}
 				for i := 0; i < len(x); i++ {

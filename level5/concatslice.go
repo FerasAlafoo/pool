@@ -1,4 +1,4 @@
-/* 
+/*
 ConcatSlice
 INSTRUCTIONS
 Write a function ConcatSlice() that takes two slices of integers as arguments and returns the concatenation of
@@ -25,10 +25,10 @@ package pool
 
 func ConcatSlice(slice1, slice2 []int) []int {
 	x := []int{}
-	for i := 0 ; i < len(slice1) ; i++ {
+	for i := 0; i < len(slice1); i++ {
 		x = append(x, slice1[i])
 	}
-	for i := 0 ; i < len(slice2) ; i++ {
+	for i := 0; i < len(slice2); i++ {
 		x = append(x, slice2[i])
 	}
 	return x

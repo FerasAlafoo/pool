@@ -15,11 +15,15 @@
 // }
 
 package main
+
 import (
-"fmt"
-"pool/level5"
+	"fmt"
+
+	"pool/level5"
 )
+
 func main() {
-fmt.Println(pool.ConcatSlice([]int{1, 2, 3}, []int{4, 5, 6}))
-fmt.Println(pool.ConcatSlice([]int{}, []int{4, 5, 6, 7, 8, 9}))
-fmt.Println(pool.ConcatSlice([]int{1, 2, 3}, []int{}))}
+	fmt.Println(pool.ConcatSlice([]int{1, 2, 3}, []int{4, 5, 6}))
+	fmt.Println(pool.ConcatSlice([]int{}, []int{4, 5, 6, 7, 8, 9}))
+	fmt.Println(pool.ConcatSlice([]int{1, 2, 3}, []int{}))
+}

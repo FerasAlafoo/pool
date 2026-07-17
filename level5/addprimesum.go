@@ -28,7 +28,7 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func main() {
+func AddPrimeSum() {
 	if len(os.Args) != 2 {
 		z01.PrintRune('0')
 		z01.PrintRune(10)
@@ -61,7 +61,6 @@ func main() {
 	if print != "" {
 		z01.PrintRune('\n')
 	}
-	return
 }
 
 func prime(n int) bool {

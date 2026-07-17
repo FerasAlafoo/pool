@@ -34,7 +34,7 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func main() {
+func Union() {
 	if len(os.Args) != 3 {
 		return
 	}

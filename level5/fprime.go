@@ -7,7 +7,7 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func main() {
+func Fprime() {
 	if len(os.Args) != 2 {
 		return
 	}

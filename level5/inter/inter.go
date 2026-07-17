@@ -28,13 +28,11 @@ func main() {
 	output := " "
 
 	for i := 0; i < len(arg1); i++ {
-		l1 := arg1[i]
 		for j := 0; j < len(arg2); j++ {
-			l2 := arg2[j]
-			if l1 == l2 {
+			if arg1[i] == arg2[j] {
 				add := false
 				for k := 0; k < len(output); k++ {
-					if l1 != rune(output[k]) {
+					if arg1[i] != rune(output[k]) {
 						add = true
 					} else {
 						add = false
@@ -42,7 +40,7 @@ func main() {
 					}
 				}
 				if add {
-					output += string(l2)
+					output += string(arg2[j])
 				}
 			}
 		}

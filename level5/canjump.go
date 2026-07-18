@@ -61,11 +61,11 @@ true
 */
 package pool
 
-import (
-	"github.com/01-edu/z01"
-)
-
 func CanJump(input []uint) bool {
-	z01.PrintRune('a')
+	x := 0
+
+	for x < len(input) {
+		x++
+	}
 	return false
 }

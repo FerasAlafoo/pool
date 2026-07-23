@@ -62,10 +62,15 @@ true
 package pool
 
 func CanJump(input []uint) bool {
-	x := 0
-
-	for x < len(input) {
-		x++
+	var pos uint
+	if len(input) == 0 {
+		return false
+	}
+	for pos < uint(len(input)) {
+		if pos == uint(len(input)-1) {
+			return true
+		}
+		pos += input[pos]
 	}
 	return false
 }

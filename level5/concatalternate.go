@@ -36,17 +36,22 @@ package pool
 
 func ConcatAlternate(slice1, slice2 []int) []int {
 	x := []int{}
-	first := []int(slice1)
-	second := []int(slice2)
+	first := slice1
+	second := slice2
+	start := 0
 	if len(slice1) < len(slice2) {
 		first, second = second, first
 	}
 
-	for i := 0; i < len(first); i++ {
-		// code here
+	for i := 0; i < len(second); i++ {
+		x = append(x, first[i])
+		x = append(x, second[i])
+		start++
 	}
 
-	// more code here to make sure all items r appended after length is reached
+	for i := start; i < len(first); i++ {
+		x = append(x, first[i])
+	}
 
 	return x
 }

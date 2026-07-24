@@ -24,6 +24,32 @@ $ go run .
 
 package pool
 
-func Chunk(slice []int, size int) {
-	
+func Chunk(slice []int, size int) [][]int {
+	// step 1 : loop over the slice, appending to a slice called x
+
+	c := 0
+	toReturn := [][]int{}
+	x := []int{}
+	if len(slice) == 0 {
+		return [][]int(nil)
+	}
+	if size == 0 {
+		return nil
+	}
+	for i := 0; i < len(slice); i++ {
+		if c < size {
+			x = append(x, slice[i])
+			c++
+		} else {
+			toReturn = append(toReturn, x)
+			c = 0
+			x = []int{}
+			i--
+		}
+	}
+	if len(x) != 0 {
+		toReturn = append(toReturn, x)
+	}
+
+	return toReturn
 }

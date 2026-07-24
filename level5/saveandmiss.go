@@ -37,14 +37,17 @@ package pool
 func SaveAndMiss(arg string, num int) string {
 	x := ""
 	counter := 0
-
-	for counter < len(arg) {
-		if counter == num {
-			counter += num
-			num += num
+	if num <= 0 {
+		return arg
+	}
+	for i := 0; i < len(arg); i++ {
+		if counter < num {
+			x += string(arg[i])
+			counter++
+		} else {
+			counter = 0
+			i += num - 1
 		}
-		x += string(arg[counter])
-		counter++
 	}
 	return x
 }

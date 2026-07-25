@@ -1,4 +1,6 @@
-/* INSTRUCTIONS
+/*
+	INSTRUCTIONS
+
 Write a function that converts an int value to a string using the specified base in the argument and that returns
 this string.
 The base is expressed as an int , from 2 to 16. The characters comprising the base are the digits from 0 to 9,
@@ -14,10 +16,10 @@ func ItoaBase(value, base int) string {
 package pool
 
 func ItoaBase(value, base int) string {
-	sign := ""
 	if value == 0 {
 		return "0"
 	}
+	sign := ""
 	if value < 0 {
 		value *= -1
 		sign = "-"
